@@ -94,4 +94,4 @@ For full licensing details, please refer to the [LICENSE](LICENSE) file.
 
 ---
 
-**Lazy Bot 2.0** is designed to make your Discord server more interactive and enjoyable. From fun games to moderation tools, Lazy Bot brings a lot of useful features to enhance your community. Enjoy using the bot and have fun! 🎉
+**Lazy Bot 3.0** is designed to make your Discord server more interactive and enjoyable. From fun games to moderation tools, Lazy Bot brings a lot of useful features to enhance your community. Enjoy using the bot and have fun! 🎉
