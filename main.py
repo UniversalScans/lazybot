@@ -409,6 +409,7 @@ async def rps_error(ctx, error):
         await ctx.reply(embed=em)
     elif isinstance(error, commands.MissingRequiredArgument):
         await bot_rps(ctx)
+        return
     else:
         print(traceback.format_exc())
 
@@ -986,10 +987,13 @@ async def slap(ctx, *, user: discord.Member = None):
 
 @bot.event
 async def on_command_error(ctx, error):
-    command = ctx.command.name
+    command = ctx.command.__name__
+
+    if hasattr(ctx.command, 'on_error'):
+        return  # Error was handled by the command-specific handler
 
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send(f"Error in command {command!r}: Missing argument {error.param!r}!")
+        await ctx.send(f"Error in command '{command}': Missing argument '{error.param}'!")
 
 # self explanatory
 bot.run(BOT_TOKEN)
