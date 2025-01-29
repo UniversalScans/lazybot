@@ -407,6 +407,8 @@ async def rps_error(ctx, error):
             color=discord.Color.red()
         )
         await ctx.reply(embed=em)
+    elif isinstance(error, commands.MissingRequiredArgument):
+        await bot_rps(ctx)
     else:
         print(traceback.format_exc())
 
